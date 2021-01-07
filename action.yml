@@ -12,6 +12,12 @@ inputs:
     description: "View top releases to find release"
     required: false
     default: 100
+  owner:
+    description: "The name of the owner"
+    required: true
+  repo:
+    description: "The name of the repo"
+    required: true
 outputs:
   id:
     description: 'Id of the release'
