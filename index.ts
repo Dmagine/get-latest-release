@@ -6,6 +6,8 @@ async function run(): Promise<void> {
     const myToken = core.getInput('myToken');
     const excludeReleaseTypes = core.getInput('exclude_types').split('|');
     const topList = +core.getInput('view_top');
+    const repo = core.getInput('repo');
+    const owner = core.getInput('owner');
 
     // Set parameters
     const excludeDraft = excludeReleaseTypes.some(f => f === "draft");
@@ -16,8 +18,8 @@ async function run(): Promise<void> {
 
     // Load release list from GitHub
     let releaseList = await octokit.repos.listReleases({
-        repo: github.context.repo.repo,
-        owner: github.context.repo.owner,
+        repo: repo,
+        owner: owner,
         per_page: topList,
         page: 1
     });
