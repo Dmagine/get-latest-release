@@ -17,6 +17,13 @@ Exclude some types of releases separated by `|`. Examples: `draft|prerelease`, `
 
 Numbers of releases which will be searched. Default value `100`.
 
+### `repo`
+
+Name of the repo without owner's name.
+
+### `owner`
+The username of the owner who owns the repo.
+
 ## Outputs
 
 ### `id`
